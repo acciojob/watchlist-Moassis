@@ -23,6 +23,7 @@ public class MovieRepository {
     public String addMovieDirectorPair(String movie, String director) {
         List<String> list = pairDb.getOrDefault(director, new ArrayList<>());
         list.add(movie);
+        pairDb.put(director, list);
         return "Added Successfully";
     }
 
