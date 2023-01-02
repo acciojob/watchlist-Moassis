@@ -78,7 +78,7 @@ public class MovieRepository {
     }
 
     public String deleteAllDirectors() {
-        for (Director d : directorDb.values()) {
+        for (String d : directorDb.keySet()) {
             if (pairDb.containsKey(d)) {
                 List<String> list = pairDb.get(d);
                 for (String s : list) {
