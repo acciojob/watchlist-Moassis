@@ -48,6 +48,11 @@ public class MovieController {
         return new ResponseEntity<>(movieService.getMovieByName(name), HttpStatus.CREATED);
     }
 
+    @GetMapping("/get-director-by-movie-name/{name}")
+    public ResponseEntity<String> getDirectorByMovieName(@PathVariable String name) {
+        return new ResponseEntity<>(movieService.getDirectorByMovieName(name), HttpStatus.CREATED);
+    }
+
     // 5. Get Director by director name: GET /movies/get-director-by-name/{name}
     // Pass director name as path parameter
     // Return Director object wrapped in a ResponseEntity object

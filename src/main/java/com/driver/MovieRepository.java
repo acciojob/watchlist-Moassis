@@ -10,6 +10,18 @@ public class MovieRepository {
     HashMap<String, Director> directorDb = new HashMap<>();
     HashMap<String, List<String>> pairDb = new HashMap<>();
 
+    public String getDirectorByMovieName(String name) {
+        for (String director : pairDb.keySet()) {
+            List<String> list = pairDb.get(director);
+            for (String s : list) {
+                if (s.equals(name)) {
+                    return director;
+                }
+            }
+        }
+        return null;
+    }
+
     public String addMovie(Movie movie) {
         movieDb.put(movie.getName(), movie);
         return "Added Successfully";

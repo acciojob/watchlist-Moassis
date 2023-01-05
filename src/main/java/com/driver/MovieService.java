@@ -10,6 +10,11 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
+    public String getDirectorByMovieName(String name) {
+        String result = movieRepository.getDirectorByMovieName(name);
+        return result;
+    }
+
     public String addMovie(Movie movie) {
         String result = movieRepository.addMovie(movie);
         return result;
